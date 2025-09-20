@@ -9,13 +9,17 @@ screen.title("Snake Game")
 screen.tracer(0)
 
 snake = Snake()
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.right, "Right")
+screen.onkey(snake.left, "Left")
 
-game_on = 20
+game_on = True
 
-while game_on > 0:
+while game_on:
     screen.update()
     time.sleep(0.1)
     snake.move()
-    game_on -= 1
 
 screen.exitonclick()
